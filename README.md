@@ -1,3 +1,3 @@
-# covid19
+# covid-labs
 
-Parse lab records for relevant covid data
+A Flask application that parses lab records for relevant covid-19 data
