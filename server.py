@@ -2,8 +2,8 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
-def index():
-    data = request.form['input_name']
+def coronalabs():
+    return render_template("public/sign_up.html")
 
 '''
 def getSquareRoot():
