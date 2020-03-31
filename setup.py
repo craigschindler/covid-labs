@@ -1,3 +1,6 @@
+print("hello")
+
+'''
 import tkinter as tk
 
 root= tk.Tk()
@@ -30,3 +33,4 @@ button1 = tk.Button(text='Get the Square Root', command=getSquareRoot, bg='brown
 canvas1.create_window(200, 180, window=button1)
 
 root.mainloop()
+'''
