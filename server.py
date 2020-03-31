@@ -1,9 +1,9 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world():
-    return render_template("home.html")
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    data = request.form['input_name']
 
 '''
 def getSquareRoot():
