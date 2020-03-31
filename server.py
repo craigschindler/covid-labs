@@ -1,5 +1,4 @@
 from flask import Flask
-import tkinter as tk
 
 
 app = Flask(__name__)
