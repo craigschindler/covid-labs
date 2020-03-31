@@ -38,7 +38,7 @@ def coronalabs():
 		WBC = find_lab(mystr, "WBC Count")
 		CRP = find_lab(mystr,"Reactive Protein")
 		Procal = find_lab(mystr,"Procalcitonin")
-		Ferritin = find_lab(mystr, "Ferritin")
+		Ferritin = find_lab(mystr, "Ferritin.")
 		Plts = find_lab(mystr, "Platelet Count")
 		DDimer = find_lab(mystr, "Dimer")
 		IL6 = find_lab(mystr, "Interleukin-6, Serum")
