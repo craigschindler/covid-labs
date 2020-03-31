@@ -1,28 +1,8 @@
 from flask import Flask
-
-app = Flask(__name__)
-@app.route('/')
-def hello_world():
-	return "hello world"
-
-'''
 import tkinter as tk
 
-root= tk.Tk()
 
-canvas1 = tk.Canvas(root, width = 400, height = 300,  relief = 'raised')
-canvas1.pack()
-
-label1 = tk.Label(root, text='Calculate the Square Root')
-label1.config(font=('helvetica', 14))
-canvas1.create_window(200, 25, window=label1)
-
-label2 = tk.Label(root, text='Type your Number:')
-label2.config(font=('helvetica', 10))
-canvas1.create_window(200, 100, window=label2)
-
-entry1 = tk.Entry (root) 
-canvas1.create_window(200, 140, window=entry1)
+app = Flask(__name__)
 
 def getSquareRoot ():
     
@@ -33,9 +13,29 @@ def getSquareRoot ():
     
     label4 = tk.Label(root, text= float(x1)**0.5,font=('helvetica', 10, 'bold'))
     canvas1.create_window(200, 230, window=label4)
-    
-button1 = tk.Button(text='Get the Square Root', command=getSquareRoot, bg='brown', fg='white', font=('helvetica', 9, 'bold'))
-canvas1.create_window(200, 180, window=button1)
 
-root.mainloop()
-'''
+@app.route('/')
+def hello_world():
+	#return "hello world"
+	root= tk.Tk()
+
+	canvas1 = tk.Canvas(root, width = 400, height = 300,  relief = 'raised')
+	canvas1.pack()
+
+	label1 = tk.Label(root, text='Calculate the Square Root')
+	label1.config(font=('helvetica', 14))
+	canvas1.create_window(200, 25, window=label1)
+
+	label2 = tk.Label(root, text='Type your Number:')
+	label2.config(font=('helvetica', 10))
+	canvas1.create_window(200, 100, window=label2)
+
+	entry1 = tk.Entry (root) 
+	canvas1.create_window(200, 140, window=entry1)
+
+
+	    
+	button1 = tk.Button(text='Get the Square Root', command=getSquareRoot, bg='brown', fg='white', font=('helvetica', 9, 'bold'))
+	canvas1.create_window(200, 180, window=button1)
+
+	root.mainloop()
