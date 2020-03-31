@@ -3,8 +3,12 @@ import tkinter as tk
 
 
 app = Flask(__name__)
+@app.route('/')
+def hello_world:
+	return "hello world"
 
-def getSquareRoot ():
+'''
+def getSquareRoot():
     
     x1 = entry1.get()
     
@@ -39,3 +43,4 @@ def hello_world():
 	canvas1.create_window(200, 180, window=button1)
 
 	root.mainloop()
+'''
