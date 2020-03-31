@@ -3,7 +3,9 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def coronalabs():
-    return render_template("public/sign_up.html")
+    email = request.form['email']
+    print("The email address is '" + email + "'")
+    return redirect('/')
 
 '''
 def getSquareRoot():
