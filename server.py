@@ -16,14 +16,15 @@ def find_lab(mystr, lab_pattern):
 
 def pv(x,y):
 	if not (x == ""):
-		return "*{}*: {}\n".format(x, y)
+		return "*{}*: {}<br>".format(x, y)
 	else:
 		return ""
 
 def pv_from_list(mystr_list):
 	ans = ""
 	for x,y in mystr_list.items():
-		ans = ans + pv(x,y)
+		if not (y == ""):
+			ans = ans + pv(x,y)
 	return ans
 
 @app.route('/', methods=["GET", "POST"])
@@ -46,11 +47,10 @@ def coronalabs():
 		COVID = pv_from_list(covidDict)
 		all_labs = [COVID]
 		lab_printout = ""
-
 		for lab in all_labs:
 			if lab.strip(" ") != "":
-				lab_printout = lab_printout + lab.strip(" ") + "\n"
+				lab_printout = lab_printout + lab.strip(" ") + "<br>"
 
-		return lab_printout
-		#return redirect(request.url)
-	return render_template("public/sign_up.html")
+		# return lab_printout
+		return render_template('/public/results.html',output=lab_printout)
+	return render_template("public/input_report.html")
