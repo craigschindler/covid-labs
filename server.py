@@ -6,13 +6,19 @@ app = Flask(__name__)
 
 def find_lab(mystr, lab_pattern):
 	search = re.findall(lab_pattern + '\s+([\d\.<>]+)\s+',mystr)
+	dummyString = ""
+	x = range(1,len(search)+1)
 	try:
-		return search[1] + " -> " + search[0]
+		if len(search) > 0:
+			for n in x:
+				dummyString = dummyString + str(search[-n])
+				if not (n == len(search)):
+					dummyString = dummyString + " -> "
+			return dummyString
+		else:
+			return(dummyString)
 	except:
-		try:
-			return search[0]
-		except:
-			return ""
+		return dummyString
 
 def pv(x,y):
 	if not (x == ""):
