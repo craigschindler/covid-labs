@@ -5,20 +5,29 @@ app = Flask(__name__)
 
 
 def find_lab(mystr, lab_pattern):
-	search = re.findall(lab_pattern + '\s+([\d\.<>]+)\s+',mystr)
-	dummyString = ""
-	x = range(1,len(search)+1)
-	try:
-		if len(search) > 0:
-			for n in x:
-				dummyString = dummyString + str(search[-n])
-				if not (n == len(search)):
-					dummyString = dummyString + " -> "
-			return dummyString
-		else:
-			return(dummyString)
-	except:
-		return dummyString
+ search = re.findall("Updated:\s+([\d][\d][A-Za-z][A-Za-z][A-Za-z][\d][\d])\s+|" + lab_pattern + '\s+([\d\.<>]+)\s+',mystr)
+ filtered_search = [];
+ for n in range(0,len(search)):
+  if not (search[n][1] == ""):
+    filtered_search.extend([search[n-1], search[n]])
+ filtered_search.reverse()
+ print(filtered_search)
+ dummyString = ""
+ try:
+  if len(filtered_search) > 0:
+   for p in range(0,len(filtered_search)):
+    if (filtered_search[p][0] == ""):
+     if ( p > 0 ):
+      dummyString = dummyString + " -> "
+     if ( not (p == (len(filtered_search)-2)) ):
+      dummyString = dummyString + filtered_search[p][1]
+     else:
+      dummyString = dummyString + filtered_search[p][1] + " (" + filtered_search[p+1][0] + ")"
+   return dummyString
+  else:
+   return dummyString
+ except:
+  return dummyString
 
 def pv(x,y):
 	if not (x == ""):
