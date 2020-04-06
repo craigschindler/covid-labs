@@ -55,7 +55,7 @@ def coronalabs():
 		Cr = find_lab(mystr, "Creatinine")
 		AST = find_lab(mystr, "AST")
 		ALT = find_lab(mystr, "ALT")
-		covidDict = {"WBC":WBC, "CRP":CRP,"Procal":Procal,"Ferritin":Ferritin,"Plts":Plts, "DDimer":DDimer, "IL6":IL6, "LDH":LDH, "CPK":CPK, "CR":Cr, "AST":AST,"ALT":AST, "Trop":Trop, "BNP":BNP}
+		covidDict = {"WBC":WBC, "CRP":CRP,"Procal":Procal,"Ferritin":Ferritin,"Plts":Plts, "DDimer":DDimer, "IL6":IL6, "LDH":LDH, "CPK":CPK, "CR":Cr, "AST":AST,"ALT":ALT, "Trop":Trop, "BNP":BNP}
 		COVID = pv_from_list(covidDict)
 		all_labs = [COVID]
 		lab_printout = ""
